@@ -1,0 +1,146 @@
+{
+  "products": [
+    {
+      "id": "3",
+      "title": "Mens Cotton Jacket",
+      "price": 55.99,
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
+      }
+    },
+    {
+      "id": "1758176550284",
+      "title": "Moster Is Here Run.....!!"
+    },
+    {
+      "id": "1758176914259",
+      "title": "Most Of us Is Die!!!"
+    },
+    {
+      "id": "1758178455829",
+      "title": "adding new products"
+    },
+    {
+      "id": "1758178535047",
+      "title": "New Product Added "
+    },
+    {
+      "id": "1758448536580",
+      "title": "Moster "
+    },
+    {
+      "id": "1758449444073",
+      "title": "new product added"
+    },
+    {
+      "id": "1758451054435",
+      "title": "منتج جديد "
+    },
+    {
+      "id": "1758451116915",
+      "title": "منتج جديد 2"
+    },
+    {
+      "id": "1758451240457",
+      "title": "منتج جديد 2 hqhtm"
+    },
+    {
+      "id": "1758451254625",
+      "title": "منتج جديد 2 hqhtmddd"
+    },
+    {
+      "id": "1758451364321",
+      "title": "add new products "
+    }
+  ],
+  "todos": [
+    {
+      "id": "1",
+      "title": "delectus aut autem",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "title": "quis ut nam facilis et officia qui",
+      "completed": false
+    },
+    {
+      "id": "3",
+      "title": "fugiat veniam minus",
+      "completed": false
+    },
+    {
+      "id": "4",
+      "title": "et porro tempora",
+      "completed": true
+    },
+    {
+      "id": "5",
+      "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+      "completed": false
+    }
+  ],
+  "users": [
+    {
+      "id": "400",
+      "name": "Ahmed Salh",
+      "email": "mohamedalgharib26@gmail.com",
+      "role": "User   ",
+      "status": "Inactive"
+    },
+    {
+      "id": "471",
+      "name": "Ahmed xx",
+      "email": "mohamedalghddddarib26@gmail.com",
+      "role": "Admin",
+      "status": "Active"
+    },
+    {
+      "id": "172",
+      "name": "Ahmed Salhdd",
+      "email": "sssss@sss.com",
+      "role": "User   ",
+      "status": "Inactive"
+    },
+    {
+      "id": "988",
+      "name": "Mohamed ",
+      "email": "mohamedalgsharib26@gmail.com",
+      "role": "User   ",
+      "status": "Active"
+    },
+    {
+      "id": "843",
+      "name": "Ahmed Salh",
+      "email": "sss@sss.com",
+      "role": "Moderator",
+      "status": "Active"
+    }
+  ],
+  "posts": [
+    {
+      "id": "76",
+      "title": "magnam facilis autem",
+      "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
+    },
+    {
+      "id": "75",
+      "title": "magnam facilis autem",
+      "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
+    },
+    {
+      "id": "32",
+      "title": "magnam facilis autem",
+      "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
+    },
+    {
+      "id": "42",
+      "title": "magnam facilis autem",
+      "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
+    }
+  ]
+}
