@@ -20,6 +20,12 @@ export const fetchPosts = async (): Promise<Post[]> => {
   const res = data.json();
   return res;
 };
+export const fetchProducts = async (): Promise<Post[]> => {
+  const data = await fetch("http://localhost:3000/products");
+  if (!data.ok) throw new Error("Error Come True");
+  const res = data.json();
+  return res;
+};
 
 // Mutation
 export const PostData = async <TBody, TResponse>(

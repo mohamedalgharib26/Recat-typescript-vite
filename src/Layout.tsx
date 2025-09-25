@@ -10,7 +10,7 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <ErrorBoundary>
-        <Suspense fallback={<Loader loading={true} />}>{children} </Suspense>
+        <Suspense fallback={<Loader loading={true} />}>{children}</Suspense>
       </ErrorBoundary>
     </>
   );

@@ -2,6 +2,8 @@
 import { useCallback, useState } from "react";
 import { MemoizedProductItem } from "./ProductsList";
 import { useDeleteProductMutation, useGetAllProductsQuery } from "./store/Api";
+import AddProduct from "./AddProduct";
+import toast from "react-hot-toast";
 // import { useSelector } from "react-redux";
 // import { useAppDispatch, type RootState } from "./store";
 // import { fetchProducts } from "./store/Thunks/ProductsThunk";
@@ -45,6 +47,9 @@ const Products = () => {
               />
             ))}
           </div>
+          <AddProduct
+            onAddProduct={() => toast.success("Product Added ....")}
+          />
         </div>
       )}
     </>

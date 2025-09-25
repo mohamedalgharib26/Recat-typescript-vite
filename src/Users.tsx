@@ -1,65 +1,43 @@
-import {
-  useMutation,
-  useQueryClient,
-  useSuspenseQuery,
-} from "@tanstack/react-query";
 import type React from "react";
-import { fetchUsers, PostData, type User } from "./store/Api/ReactQuery";
+import { type User } from "./store/Api/ReactQuery";
 import UserManagement from "./AddNewUser";
 import ConfirmModel from "./ConfirmModel";
 import { useState } from "react";
-import toast from "react-hot-toast";
+import { useDeleteUser } from "./Hooks/Users/useDeleteUserHook";
+import { useFetchUsers } from "./Hooks/Users/useFetchUsers";
 
 const Users: React.FC = () => {
-  const { data: users } = useSuspenseQuery({
-    queryFn: fetchUsers,
-    queryKey: ["users"],
-  });
-  const qc = useQueryClient();
-  const mutation = useMutation({
-    mutationFn: async (id: string) =>
-      PostData<void, void>(`http://localhost:3000/users/${id}`, undefined, {
-        method: "DELETE",
-      }),
-    onSuccess: async () => {
-      toast.success("User Deleted ...");
-      await qc.invalidateQueries();
-    },
-    onError: () => toast.error("Error .. "),
-  });
-
-  const [modal, setModel] = useState(false);
+  const mutation = useDeleteUser();
+  const { data: users } = useFetchUsers();
+  const [modal, setModal] = useState(false);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [selectedUserForEdit, setSelectedUserForEdit] = useState<User | null>(
     null
   );
 
   const handleDelete = (user: User) => {
-    setModel(true);
+    setModal(true);
     setSelectedUser(user);
   };
 
   const handleConfirm = (id: string) => {
     mutation.mutate(id);
-    setModel(false);
+    setModal(false);
   };
 
   function handleEdit(user: User): void {
-    setSelectedUserForEdit(null);
-    setTimeout(() => {
-      setSelectedUserForEdit(user);
-    }, 0);
+    setSelectedUserForEdit({ ...user });
   }
 
   return (
-    <div>
+    <div className="mt-3">
       Users
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {modal && (
           <ConfirmModel
             showModel={modal}
             cancel={() => {
-              setModel(false);
+              setModal(false);
               setSelectedUser(null);
             }}
             confirm={() => selectedUser && handleConfirm(selectedUser.id)}

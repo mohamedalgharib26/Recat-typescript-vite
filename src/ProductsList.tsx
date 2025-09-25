@@ -1,14 +1,13 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+import { useSuspenseQuery } from "@tanstack/react-query";
 import React, { useState, useCallback, memo } from "react";
+import { fetchProducts } from "./store/Api/ReactQuery";
+import AddProduct from "./AddProduct";
+import toast from "react-hot-toast";
 
 export interface Product {
   id: string;
   title: string;
-}
-
-interface ProductListProps {
-  products: Product[];
-  loading: boolean;
-  error: string | null;
 }
 
 interface ProductItemProps {
@@ -50,11 +49,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
 
 export const MemoizedProductItem = memo(ProductItem);
 
-const ProductList: React.FC<ProductListProps> = ({
-  products,
-  loading,
-  error,
-}) => {
+const ProductList: React.FC<{}> = () => {
   const [cartCount, setCartCount] = useState<number>(0);
 
   const handleAddToCart = useCallback((productId: string) => {
@@ -72,10 +67,10 @@ const ProductList: React.FC<ProductListProps> = ({
     handleDeleteProduct,
     typeof handleDeleteProduct
   ); // debug
-
-  if (loading) return <h1 className="text-xl">Loading ...</h1>;
-  if (error) return <h1 className="text-xl text-red-500">{error}</h1>;
-
+  const { data: products } = useSuspenseQuery({
+    queryKey: ["products"],
+    queryFn: fetchProducts,
+  });
   return (
     <div className="p-4">
       <h3 className="text-lg font-bold mb-4">Cart Count: {cartCount}</h3>
@@ -89,6 +84,11 @@ const ProductList: React.FC<ProductListProps> = ({
           />
         ))}
       </div>
+      <AddProduct
+        onAddProduct={(product) =>
+          toast.success(`Adding Product ${product.title}`)
+        }
+      />
     </div>
   );
 };

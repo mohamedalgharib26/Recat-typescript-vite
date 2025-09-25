@@ -28,8 +28,8 @@ const UserManagement = ({
         method: "POST",
       }),
     onSuccess: async () => {
-      await qc.invalidateQueries();
       toast.success("User Added ...");
+      await qc.invalidateQueries();
     },
     onError: () => toast.error("Error .. "),
   });
@@ -42,8 +42,11 @@ const UserManagement = ({
           method: "PUT",
         }
       ),
-    onSuccess: () => qc.invalidateQueries(),
-    onError: () => console.error("Error Happen"),
+    onSuccess: async () => {
+      await qc.invalidateQueries();
+      toast.success("User Updated ...");
+    },
+    onError: () => toast.error("Error .. "),
   });
   useEffect(() => {
     if (editingUserProp) {
@@ -101,7 +104,7 @@ const UserManagement = ({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Add/Edit User Form */}
 
-      {Mutation.isPending ? (
+      {Mutation.isPending || updateMutation.isPending ? (
         <div className="mt-2">
           <Loader loading={true} />
         </div>

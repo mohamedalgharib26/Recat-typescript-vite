@@ -8,6 +8,8 @@ import Layout from "./Layout";
 import Posts from "./Posts";
 import Users from "./Users";
 import TodoList from "./todos/TodoList";
+import Navbar from "./Components/Navbar";
+import ProductList from "./ProductsList";
 // import ErrorBoundary from "./ErrorBoundary";
 // import Posts from "./Posts";
 // import Loader from "./Loader";
@@ -54,13 +56,14 @@ function App() {
       {/* <Products />
       <AddProduct onAddProduct={log} />
        */}
-
       <Layout>
         <BrowserRouter>
+          <Navbar />
           <Routes>
             <Route path="/posts" element={<Posts />} />
             <Route path="/users" element={<Users />} />
             <Route path="/todos" element={<TodoList />} />
+            <Route path="/products" element={<ProductList />} />
             <Route path="/" element={<Users />} />
           </Routes>
         </BrowserRouter>{" "}
