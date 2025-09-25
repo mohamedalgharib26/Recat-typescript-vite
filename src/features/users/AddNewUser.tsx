@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import { PostData, type User } from "./store/Api/ReactQuery";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import Loader from "./Loader";
+import Loader from "../../Components/Loader";
+import { type User, PostData } from "../../store/Api/ReactQuery";
 
 // Initial users data (from the provided JSON)
 

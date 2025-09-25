@@ -1,6 +1,6 @@
 import { Suspense, type ReactNode } from "react";
-import ErrorBoundary from "./ErrorBoundary";
-import Loader from "./Loader";
+import ErrorBoundary from "./Components/ErrorBoundary";
+import Loader from "./Components/Loader";
 
 type Props = {
   children: ReactNode;

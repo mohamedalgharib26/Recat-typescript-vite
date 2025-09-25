@@ -1,10 +1,11 @@
 import type React from "react";
-import { type User } from "./store/Api/ReactQuery";
-import UserManagement from "./AddNewUser";
-import ConfirmModel from "./ConfirmModel";
+
 import { useState } from "react";
-import { useDeleteUser } from "./Hooks/Users/useDeleteUserHook";
-import { useFetchUsers } from "./Hooks/Users/useFetchUsers";
+import { useDeleteUser } from "../../Hooks/Users/useDeleteUserHook";
+import ConfirmModel from "../../ConfirmModel";
+import { useFetchUsers } from "../../Hooks/Users/useFetchUsers";
+import type { User } from "../../store/Api/ReactQuery";
+import UserManagement from "./AddNewUser";
 
 const Users: React.FC = () => {
   const mutation = useDeleteUser();

@@ -2,7 +2,7 @@
 // import type { RootState } from "./store";
 import Loader from "./Loader";
 import Error from "./Error";
-import { useUiStore } from "./store/Zustand";
+import { useUiStore } from "../store/Zustand";
 
 type Props = {
   children: React.ReactNode;

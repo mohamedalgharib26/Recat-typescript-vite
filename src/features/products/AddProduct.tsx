@@ -2,11 +2,13 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
 // import { useMutate } from "./CustomMutation";
 import type { Product } from "./ProductsList";
-import { useAddProductMutation } from "./store/Api";
 // import { useState } from "react";
-import { useAppDispatch, type RootState } from "./store";
 import { useSelector } from "react-redux";
-import { setError, setLoading } from "./store/ui/UiSlice";
+// import RootState from your store
+import type { RootState } from "../../store";
+import { useAppDispatch } from "../../store";
+import { useAddProductMutation } from "../../store/Api";
+import { setLoading, setError } from "../../store/ui/UiSlice";
 
 // define form data type
 type AddProductFormData = {

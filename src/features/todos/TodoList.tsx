@@ -4,9 +4,9 @@
 // import { useEffect } from "react";
 
 import { useEffect, useState } from "react";
-import { useGetAllTodosQuery } from "../store/Api";
 import type { Todo } from "./Todo";
 import SingleTodo from "./Todo";
+import { useGetAllTodosQuery } from "../../store/Api";
 
 const TodoList = () => {
   // const { items } = useSelector((state: RootState) => state.todos);

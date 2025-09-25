@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 import { useSuspenseQuery } from "@tanstack/react-query";
 import React, { useState, useCallback, memo } from "react";
-import { fetchProducts } from "./store/Api/ReactQuery";
 import AddProduct from "./AddProduct";
 import toast from "react-hot-toast";
+import { fetchProducts } from "../../store/Api/ReactQuery";
 
 export interface Product {
   id: string;

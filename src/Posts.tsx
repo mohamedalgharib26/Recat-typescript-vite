@@ -6,9 +6,9 @@ import {
 } from "@tanstack/react-query";
 import { fetchPosts, PostData } from "./store/Api/ReactQuery";
 import type { Post } from "./store/Zustand";
-import Loader from "./Loader";
-import Error from "./Error";
 import toast from "react-hot-toast";
+import Loader from "./Components/Loader";
+import Error from "./Components/Error";
 const Posts = () => {
   const { data: posts, error } = useSuspenseQuery<Post[], Error>({
     queryKey: ["posts"],
