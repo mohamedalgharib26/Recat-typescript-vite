@@ -1,9 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useState } from "react";
-import { MemoizedProductItem } from "./ProductsList";
-import { useDeleteProductMutation, useGetAllProductsQuery } from "./store/Api";
+import { MemoizedProductItem, type Product } from "./ProductsList";
+
 import AddProduct from "./AddProduct";
 import toast from "react-hot-toast";
+import {
+  useGetAllProductsQuery,
+  useDeleteProductMutation,
+} from "../../store/Api";
 // import { useSelector } from "react-redux";
 // import { useAppDispatch, type RootState } from "./store";
 // import { fetchProducts } from "./store/Thunks/ProductsThunk";
@@ -38,7 +42,7 @@ const Products = () => {
         <div>
           <h3>Cart Count: {cartCount}</h3>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
-            {items.map((product) => (
+            {items.map((product: Product) => (
               <MemoizedProductItem
                 key={product.id}
                 product={product}
